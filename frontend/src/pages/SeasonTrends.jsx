@@ -4,7 +4,7 @@ import createPlotlyComponent from 'react-plotly.js/factory';
 import { Activity, TrendingUp, Brain, X, Plus } from 'lucide-react';
 
 const Plot = createPlotlyComponent(Plotly);
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const DRIVER_COLORS = ['#E53935', '#FF6F00', '#0277BD', '#2E7D32', '#7B1FA2', '#F57C00', '#C2185B', '#00838F', '#5E35B1', '#0097A7'];
 

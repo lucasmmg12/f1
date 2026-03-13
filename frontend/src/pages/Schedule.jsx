@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Calendar, Clock, MapPin, Flag, ChevronRight, Timer, RefreshCw, Globe } from 'lucide-react';
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 // Country flag emojis
 const COUNTRY_FLAGS = {

@@ -4,7 +4,7 @@ import createPlotlyComponent from 'react-plotly.js/factory';
 import { Activity, Users, Brain, X, Shield } from 'lucide-react';
 
 const Plot = createPlotlyComponent(Plotly);
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const TEAM_COLORS = {
     'Red Bull Racing': '#3671C6', 'Ferrari': '#E8002D', 'McLaren': '#FF8000',

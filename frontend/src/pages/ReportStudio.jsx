@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Activity, FileImage, Download, Monitor, Square, Smartphone, Type } from 'lucide-react';
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const FORMATS = [
     { id: '16:9', label: '16:9', icon: Monitor, desc: 'TV / Presentación', w: 1920, h: 1080 },

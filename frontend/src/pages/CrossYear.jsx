@@ -5,7 +5,7 @@ import { Activity, GitCompareArrows, Brain, X } from 'lucide-react';
 import Hint from '../components/Hint';
 
 const Plot = createPlotlyComponent(Plotly);
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 export default function CrossYear() {
     const [events, setEvents] = useState([]);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Trophy, Calendar, Flag, Clock, Fuel, Circle, ChevronDown, ChevronUp, Activity, Zap, ArrowUp, ArrowDown, Minus } from 'lucide-react';
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const COMPOUND_COLORS = {
     'SOFT': '#E53935',

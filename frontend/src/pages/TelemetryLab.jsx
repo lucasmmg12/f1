@@ -6,7 +6,7 @@ import InteractiveTrackMap from '../components/InteractiveTrackMap';
 import Hint from '../components/Hint';
 
 const Plot = createPlotlyComponent(Plotly);
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 export default function TelemetryLab() {
   const [year, setYear] = useState(2025);

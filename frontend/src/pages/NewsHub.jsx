@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Newspaper, RefreshCw, Globe, ExternalLink, Clock, Filter, Search, ChevronDown, Zap } from 'lucide-react';
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const LANG_OPTIONS = [
     { id: 'all', label: 'Todas', flag: '🌐' },

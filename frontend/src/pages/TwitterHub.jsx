@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ExternalLink, Star, Search, Hash, TrendingUp, MessageCircle, Users, RefreshCw, Clock } from 'lucide-react';
 
-const API_URL = "http://localhost:8000";
+import { API_URL } from '../config';
 
 const XIcon = ({ size = 16, className = '' }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
