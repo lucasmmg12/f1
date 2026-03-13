@@ -1,0 +1,254 @@
+/* =========================================
+   GrowLabs Ultra-Dark Design System (Dash)
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-dark: #000000;
+  --accent-primary: #00FF88;
+  --accent-cyan: #00D1FF;
+  --accent-red: #FF3131;
+  --accent-amber: #FACC15;
+
+  --text-white: #FFFFFF;
+  --text-gray: #9CA3AF;
+  
+  --surface-bg: rgba(255, 255, 255, 0.03);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(12px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-gray);
+  background: var(--bg-dark);
+}
+
+/* Background Aura */
+body::before {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: 30%;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #1E3A8A 0%, rgba(6, 95, 70, 0.8) 40%, transparent 70%);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dashboard-container {
+  padding: 2rem 3rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Typography */
+h1, h2, h3 {
+  color: var(--text-white);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  margin: 0 0 1rem 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.map-title {
+  margin-top: 2rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--accent-cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.glow-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-cyan);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 8px var(--accent-cyan); opacity: 1; }
+  50% { box-shadow: 0 0 16px var(--accent-cyan); opacity: 0.6; }
+  100% { box-shadow: 0 0 8px var(--accent-cyan); opacity: 1; }
+}
+
+/* Controls Row */
+.controls-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Forms & Inputs (Ghost Style) */
+.input-dark, .Select-control {
+  background: transparent !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-white) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px !important;
+  outline: none !important;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none !important;
+}
+
+.input-dark:focus, .Select-control.is-focused {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2) !important;
+}
+
+.width-drop {
+  width: 250px;
+}
+
+/* Dropdown tweaks for Dash */
+.Select-menu-outer {
+  background-color: #0b0f14 !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+.Select-option {
+  color: var(--text-gray) !important;
+  background-color: transparent !important;
+}
+.Select-option.is-focused, .Select-option.is-selected {
+  background-color: rgba(255,255,255,0.05) !important;
+  color: var(--accent-primary) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--bg-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+  transition: all 300ms ease;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 136, 0.8);
+}
+
+/* Main Grid (12 Columns) */
+.main-grid {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: 2rem;
+}
+
+/* Glassmorphism Containers */
+.glass-container {
+  background: var(--surface-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-container:hover, .scorecard:hover {
+  transform: scale(1.02);
+  border-color: rgba(0, 255, 136, 0.4);
+}
+
+/* Cards (Left Col) */
+#kpi-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.scorecard {
+  background: var(--surface-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 300ms ease;
+}
+
+.scorecard-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  letter-spacing: 1px;
+}
+
+.scorecard-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.accentuate-cyan { color: var(--accent-cyan) !important; }
+.accentuate-red { color: var(--accent-red) !important; }
+
+/* Chart Containers */
+.chart-container {
+  height: 75vh;
+  padding: 1rem;
+}
+
+.map-container {
+  height: 40vh;
+  padding: 0;
+  overflow: hidden;
+}
